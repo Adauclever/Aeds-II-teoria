@@ -38,8 +38,13 @@ void buscaenc(No *lista, int x, No **ant, No **pont){
         return retorno;
     }
 
-    No *remove(No *lista, No *removido){
-        int retorno = NULL;
-        buscaenec(lista, removido->chave, &ant, &pont)
+    No *remove(No *lista, int x){
+        No  *retorno = NULL;
+        No *ant; No *pont;
+        buscaenec(lista, x, &ant, &pont);
+        if(pont !=NULL){
+            ant->prox = pont->prox;
+            retorno = pont;
+        }
+        return retorno;
     }
-
