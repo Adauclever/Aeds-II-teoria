@@ -7,7 +7,7 @@ typedef struct {
     struct no *prox;
 }No;
 
-void buscaenc(No *lista, int x, No **ant, No **pont){
+void BuscaEnc(No *lista, int x, No **ant, No **pont){
     *ant = lista;
     *pont = NULL;
     No *ptr = lista->prox;
@@ -48,3 +48,42 @@ void buscaenc(No *lista, int x, No **ant, No **pont){
         }
         return retorno;
     }
+
+    No *criaNo(int x){
+        No *nonoNo = (No *) malloc(sizeof(No));
+        
+        if(nonoNo == NULL){
+            printf("\nErro ao alocar memoria\n"); 
+        return NULL; 
+        }
+        nonoNo->chave = x;
+        nonoNo->prox = NULL;
+
+        return nonoNo;
+    }
+
+
+    void imprimeLista(No *lista){
+        No *aux = lista->prox;
+
+        while(aux != NULL){
+            printf("%d -> ", aux->chave);
+        aux = aux->prox;
+        }
+            printf("NULL\n");
+    }
+
+    void liberaLista(No *lista){
+    No *aux = lista->prox; 
+
+    while(aux != NULL){ 
+       No *aux2 = aux->prox; 
+        free(aux); 
+        aux = aux2; 
+        printf("\nLimpou no");
+    }
+    free(lista); 
+    printf("\n\nLimpou ptlista"); 
+}
+
+    
