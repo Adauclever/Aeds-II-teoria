@@ -18,7 +18,7 @@ void BuscaEnc(No *lista, int x, No **ant, No **pont){
             ptr = ptr->prox;
         }else if (ptr->chave == x){
             *pont = ptr;
-            ptr = NULL;
+            ptr = NULL; 
         }else{
              ptr = NULL;
         }
