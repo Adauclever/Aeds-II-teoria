@@ -88,11 +88,11 @@ void liberaLista(No *lista) {
         No *aux2 = aux->prox;
         free(aux);
         aux = aux2;
-        printf("\nLimpou nó");
+        printf("\nLimpou no");
     }
 
     free(lista); // libera nó cabeça
-    printf("\n\nLimpou nó cabeça\n");
+    printf("\n\nLimpou no cabeca\n");
 }
 
 // ------------------- MAIN -------------------
